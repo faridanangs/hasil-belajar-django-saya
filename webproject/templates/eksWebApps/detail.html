@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card" style="width: 40rem;">
+      <div class="card-body">
+      <img src="{{ modelpost.image.url }}" style="width:400px; height:400px" class="card-img-top"><br>
+      <small>{{ modelpost.date }}</small>
+      <p>{{ modelpost.penulis }}</p>
+      <h5 class="card-title">{{ modelpost.judul }}</h5>
+      <p class="card-text">{{ modelpost.konten}}</p>
+      <a href="{% url 'index' %}" class="btn btn-primary">Home</a>
+    </div>
+  </div>
+{% endblock content %}

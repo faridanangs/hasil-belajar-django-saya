@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for show in lihat %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <img src="{{ show.image.url }}" class="card-img-top">
+      <small>{{ show.date }}</small>
+      <p>{{ show.penulis }}</p>
+      <h5 class="card-title">{{ show.judul }}</h5>
+      <p class="card-text">{{ show.konten | truncatechars:100 }}</p>
+      <a href="{% url 'detail' show.pk %}" class="btn btn-primary">Detail</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock content %}
